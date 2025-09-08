@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
-public class productController {
+public class ProductController {
 
     private final ProductService productService;
 
     @GetMapping("/")
-    public String products(Model model){
-        model.addAttribute("products", productService.getAllProducts());
+    public String products(@RequestParam(name = "title",required = false) String title, Model model){
+        model.addAttribute("products", productService.getAllProducts(title));
         return "products";
     }
 

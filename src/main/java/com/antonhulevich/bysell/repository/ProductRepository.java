@@ -1,17 +1,10 @@
 package com.antonhulevich.bysell.repository;
 
 import com.antonhulevich.bysell.models.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface ProductRepository {
-    List<Product> getAll();
-
-    Product getById(Long id);
-
-    void save(Product product);
-
-    void delete(Long id);
-
-
+public interface ProductRepository extends JpaRepository<Product, Long> {
+    List<Product> findByTitle(String title);
 }
