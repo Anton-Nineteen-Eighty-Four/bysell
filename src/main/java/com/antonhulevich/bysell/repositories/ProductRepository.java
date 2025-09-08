@@ -1,4 +1,4 @@
-package com.antonhulevich.bysell.repository;
+package com.antonhulevich.bysell.repositories;
 
 import com.antonhulevich.bysell.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
